@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: srikuto@student.42.fr <srikuto@>           +#+  +:+       +#+        */
+/*   By: srikuto <srikuto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/26 18:31:29 by srikuto@stu       #+#    #+#             */
-/*   Updated: 2025/02/26 23:00:57 by srikuto@stu      ###   ########.fr       */
+/*   Created: 2025/02/27 15:34:51 by srikuto           #+#    #+#             */
+/*   Updated: 2025/02/27 15:34:53 by srikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strlen(const char *c)
 	size_t	i;
 
 	i = 0;
-	while(c[i] != '\0')
+	while (c[i] != '\0')
 		i++;
 	return (i);
 }

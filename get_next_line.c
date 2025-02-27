@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: srikuto@student.42.fr <srikuto@>           +#+  +:+       +#+        */
+/*   By: srikuto <srikuto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/26 18:31:38 by srikuto@stu       #+#    #+#             */
-/*   Updated: 2025/02/26 19:23:24 by srikuto@stu      ###   ########.fr       */
+/*   Created: 2025/02/27 15:34:41 by srikuto           #+#    #+#             */
+/*   Updated: 2025/02/27 15:34:44 by srikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ char	*ft_getline(char *save)
 {
 	char	*rtn;
 	int		i;
-	
+
 	i = 0;
 	while (save[i] && save[i] != '\n')
 		i++;
 	rtn = (char *)malloc(sizeof(char) * (i + 2));
 	if (!rtn)
-		return(NULL);
+		return (NULL);
 	i = 0;
 	if (save[i] && save[i] != '\n')
 	{
@@ -37,18 +37,19 @@ char	*ft_getline(char *save)
 	rtn[i] = '\0';
 	return (rtn);
 }
+
 char	*ft_save(char *save)
 {
 	char	*rtn;
 	int		i;
 	int		j;
-	
-	while(save[i] && save[i] != '\n')
+
+	while (save[i] && save[i] != '\n')
 		i++;
 	rtn = (char *)malloc(sizeof(char) * (ft_strlen(save) - i) + 1);
 	if (!rtn)
 		return (NULL);
-	while(save != '\0')
+	while (save != '\0')
 	{
 		rtn[j] = save[i];
 		i++;
@@ -66,7 +67,7 @@ char	*ft_read(int fd, char *save)
 	tmp = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!tmp)
 		return (NULL);
-	read_rtn = 1;//1回以上whileを通るように
+	read_rtn = 1;
 	while (!ft_strchr(save, '\n') && read_rtn != 0)
 	{
 		read_rtn = read(fd, tmp, BUFFER_SIZE);
@@ -78,7 +79,7 @@ char	*ft_read(int fd, char *save)
 		tmp[read_rtn] = '\0';
 		save = ft_strjoin(save, tmp);
 	}
-	free(tmp);
+	free (tmp);
 	return (save);
 }
 
@@ -87,7 +88,7 @@ char	*get_next_line(int fd)
 	int			n;
 	char		*line;
 	static char	*save;
-	
+
 	save = ft_read(fd, save);
 	if (!save)
 		return (NULL);
