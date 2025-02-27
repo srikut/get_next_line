@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: srikuto <srikuto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: srikuto <srikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 15:34:41 by srikuto           #+#    #+#             */
-/*   Updated: 2025/02/27 15:34:44 by srikuto          ###   ########.fr       */
+/*   Updated: 2025/02/27 18:09:25 by srikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,14 @@ char	*ft_save(char *save)
 	int		i;
 	int		j;
 
+	i = 0;
 	while (save[i] && save[i] != '\n')
 		i++;
 	rtn = (char *)malloc(sizeof(char) * (ft_strlen(save) - i) + 1);
 	if (!rtn)
 		return (NULL);
-	while (save != '\0')
+	j = 0;
+	while (save[i] != '\0')
 	{
 		rtn[j] = save[i];
 		i++;
@@ -85,10 +87,11 @@ char	*ft_read(int fd, char *save)
 
 char	*get_next_line(int fd)
 {
-	int			n;
 	char		*line;
 	static char	*save;
 
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (0);
 	save = ft_read(fd, save);
 	if (!save)
 		return (NULL);

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: srikuto <srikuto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: srikuto <srikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 15:34:51 by srikuto           #+#    #+#             */
-/*   Updated: 2025/02/27 15:34:53 by srikuto          ###   ########.fr       */
+/*   Updated: 2025/02/27 20:42:23 by srikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strlen(const char *c)
+int	ft_strlen(char *c)
 {
 	size_t	i;
 
