@@ -6,7 +6,7 @@
 /*   By: srikuto <srikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 15:34:51 by srikuto           #+#    #+#             */
-/*   Updated: 2025/02/27 20:42:23 by srikuto          ###   ########.fr       */
+/*   Updated: 2025/03/02 18:54:04 by srikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ int	ft_strlen(char *c)
 	return (i);
 }
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_strchr(char *str, int c)
 {
+	if (!str)
+		return (NULL);
 	while (1)
 	{
 		if (*str == (char)c)
@@ -48,13 +50,18 @@ static int	all_len(char const *s1, char const *s2)
 	return (s1len + s2len);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	size_t	i;
 	size_t	j;
 	char	*str;
 
-	if (!s1 || !s2)
+	if (!s1)
+	{
+		s1 = (char *)malloc(1 * sizeof(char));
+		s1[0] = '\0';
+	}
+	if (!s1 && !s2)
 		return (NULL);
 	str = (char *)malloc(all_len(s1, s2) + 1);
 	if (!str)

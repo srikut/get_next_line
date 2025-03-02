@@ -6,7 +6,7 @@
 /*   By: srikuto <srikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 15:34:41 by srikuto           #+#    #+#             */
-/*   Updated: 2025/02/27 18:09:25 by srikuto          ###   ########.fr       */
+/*   Updated: 2025/03/02 19:11:45 by srikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ char	*ft_read(int fd, char *save)
 	while (!ft_strchr(save, '\n') && read_rtn != 0)
 	{
 		read_rtn = read(fd, tmp, BUFFER_SIZE);
+		if (read_rtn == 0)
+			break ;
 		if (read_rtn == -1)
 		{
 			free(tmp);
