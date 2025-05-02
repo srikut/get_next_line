@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: srikuto <srikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: srikuto <srikuto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 15:34:33 by srikuto           #+#    #+#             */
-/*   Updated: 2025/03/02 18:52:43 by srikuto          ###   ########.fr       */
+/*   Updated: 2025/04/10 10:59:50 by srikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 char	*get_next_line(int fd);
 
-int		ft_strlen(char *c);
+size_t	ft_strlen(const char *c);
 char	*ft_strchr(char *str, int c);
 char	*ft_strjoin(char *s1, char *s2);
 
